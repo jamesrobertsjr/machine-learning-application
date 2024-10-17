@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  frontend:
+    build:
+      context: ./frontend  # Path to your frontend Dockerfile
+    container_name: nextjs-frontend
+    ports:
+      - "3000:3000"  # Map port 3000 on the host to 3000 in the container
+    depends_on:
+      - backend  # Ensure backend starts before frontend
+
+  backend:
+    build:
+      context: ./backend  # Path to your backend Dockerfile
+    container_name: fastapi-backend
+    ports:
+      - "8000:8000"  # Map port 8000 on the host to 8000 in the container
+    volumes:
+      - ./backend:/app  # Mount your backend code into the container

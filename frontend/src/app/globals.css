@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 20px;
+}
+
+h1, h2 {
+  font-weight: 600;
+}
+
+input, button {
+  @apply border border-gray-300 rounded-lg p-2 w-full;
+}
+
+button {
+  @apply bg-blue-500 text-white hover:bg-blue-600 transition-colors;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
